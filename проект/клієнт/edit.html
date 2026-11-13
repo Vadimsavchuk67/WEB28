@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Редагування відправлення</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script>
+    <script src="edit.js" defer></script>
+</head>
+<body>
+    <header><h1>Поштова служба</h1><a href="index.html">Список відправлень</a></header>
+    <h2>Редагування поштового відправлення</h2>
+    <form id="posting-form" novalidate>
+        <div class="field">
+            <label for="from">Відправник</label>
+            <input id="from" type="text" aria-describedby="from-error" required>
+            <span id="from-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="to">Одержувач</label>
+            <input id="to" type="text" aria-describedby="to-error" required>
+            <span id="to-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="content">Вміст</label>
+            <input id="content" type="text" aria-describedby="content-error" required>
+            <span id="content-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="deliveryType">Тип доставки</label>
+            <select id="deliveryType" aria-describedby="deliveryType-error" required><option value="">Виберіть доставку</option><option value="Department">У відділення</option><option value="Courier">Кур’єр</option><option value="ExpressCourier">Експрес</option></select>
+            <span id="deliveryType-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="weight">Вага, кг</label>
+            <input id="weight" type="number" aria-describedby="weight-error" min="0.01" step="0.01" required>
+            <span id="weight-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="width">Ширина, см</label>
+            <input id="width" type="number" aria-describedby="width-error" min="1" step="1" required>
+            <span id="width-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="height">Висота, см</label>
+            <input id="height" type="number" aria-describedby="height-error" min="1" step="1" required>
+            <span id="height-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="depth">Довжина, см</label>
+            <input id="depth" type="number" aria-describedby="depth-error" min="1" step="1" required>
+            <span id="depth-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="value">Оголошена вартість, грн</label>
+            <input id="value" type="number" aria-describedby="value-error" min="0" step="0.01" required>
+            <span id="value-error" class="error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+            <label for="price">Ціна доставки, грн</label>
+            <input id="price" type="number" aria-describedby="price-error" min="0" step="0.01" required>
+            <span id="price-error" class="error" aria-live="polite"></span>
+        </div>
+        <p id="status" role="alert"></p>
+        <button id="save" type="button">Зберегти</button>
+        <button id="cancel" type="button">Скасувати</button>
+    </form>
+</body>
+</html>
